@@ -1,1 +1,1 @@
-My repo for the Code Challenge to get into the Front-End Dev Accelerator.
+My node.js http server and accompanying HTML page for the Front-End Code Challenge.

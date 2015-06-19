@@ -6,19 +6,31 @@ const PORT = 3000;
 var server = http.createServer(function(req, res){
   console.log(req.url);
   if (req.url === '/') {
-    fs.readFile('index.html',function (err, data){
+    fs.readFile('./app/index.html',function (err, data){
       res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
       res.write(data);
       res.end();
     });
-  } else if (req.url === '/about.html') {
-    fs.readFile('about.html',function (err, data){
+  } else if (req.url === '/index.html') {
+    fs.readFile('./app/index.html',function (err, data){
       res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+      res.write(data);
+      res.end();
+    });
+  } else if (req.url === '/styles.css') {
+    fs.readFile('./app/styles.css',function (err, data){
+      res.writeHead(200, {'Content-Type': 'text/css','Content-Length':data.length});
+      res.write(data);
+      res.end();
+    });
+  } else if (req.url === '/boomer.jpg') {
+    fs.readFile('./app/boomer.jpg',function (err, data){
+      res.writeHead(200, {'Content-Type': 'image/jpg','Content-Length':data.length});
       res.write(data);
       res.end();
     });
   } else {
-    fs.readFile('404.html',function (err, data){
+    fs.readFile('./app/404.html',function (err, data){
       res.writeHead(404, {'Content-Type': 'text/html','Content-Length':data.length});
       res.write(data);
       res.end();
