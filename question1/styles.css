@@ -1,0 +1,69 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1em;
+  width: 70%;
+}
+main {
+  /*background-color: #ECE5FF;*/
+}
+h1 {
+  font-size: 200%;
+  color: #320DFF;
+  padding: 0;
+  margin: 0;
+}
+h2 {
+  font-size: 130%;
+  color: #0C6DE8;
+}
+ol {
+  color: #178CFF;
+  width: 30%;
+}
+ol li {
+  line-height: 2em;
+  margin-top: .5em;
+}
+ul {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+ul li {
+  line-height: 1em;
+  margin-top: 5px;
+}
+li {
+  cursor: pointer;
+}
+button {
+  font-size: 50%;
+}
+button.edit {
+  float: right;
+}
+footer {
+  position: absolute;
+  bottom: 0px;
+  font-size: 50%;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  clear: both;
+}
+.urgent {
+  font-weight: bold;
+  color: #B800AC;
+}
+.hidden {
+  display: none;
+}
+div.details {
+  width: 40%;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  font-style: italic;
+}
+ul.details {
+  width: 100%;
+  list-style-type: none;
+}
