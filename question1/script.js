@@ -1,48 +1,32 @@
 'use strict';
 
 $(function() {
-  $('p').click(function() {
-    $('div.details').toggleClass('hidden');
-  })
-  $('button.edit').click(function() {
-    $(this).parent('.item').attr('class','urgent');
-  })
+  $('button#add-item').click(function() {
+    var elLi = $('<li><span class="edit-me">New Item</span> <button class="remove-item">Remove</button></li>')
+    $('#todo-list').append(elLi);
+  });
 
+  $('.edit-me').click(function() {
+    var el = $(this);
+    var elReplace = $('<input name="ghost" type="text" placeholder="' + el.text() + '"/>');
+    var connect = $('input[name="ghostField"]');
 
-
-
-var replaceWith = $('<input name="temp" type="text" />'),
-    connectWith = $('input[name="hiddenField"]');
-
-
-
-$.fn.inlineEdit = function(replaceWith, connectWith) {
-
-    $(this).hover(function() {
-        $(this).addClass('hover');
-    }, function() {
-        $(this).removeClass('hover');
+    el.hide();
+    el.after(elReplace);
+    elReplace.focus();
+    elReplace.blur(function() {
+      if ($(this).val() !== '') {
+        connect.val($(this).val()).change();
+        el.text($(this).val());
+      }
+      $(this).remove();
+      el.show();
     });
+  });
 
-    $(this).click(function() {
+  $('button.remove-item').click(function() {
+    $(this).parent().remove();
+  });
 
-        var elem = $(this);
-
-        elem.hide();
-        elem.after(replaceWith);
-        replaceWith.focus();
-
-        replaceWith.blur(function() {
-
-            if ($(this).val() != "") {
-                connectWith.val($(this).val()).change();
-                elem.text($(this).val());
-            }
-
-            $(this).remove();
-            elem.show();
-        });
-    });
-};
-$('p#trial').inlineEdit(replaceWith, connectWith);
+  
 });

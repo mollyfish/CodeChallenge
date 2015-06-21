@@ -3,9 +3,6 @@ body {
   font-size: 1em;
   width: 70%;
 }
-main {
-  /*background-color: #ECE5FF;*/
-}
 h1 {
   font-size: 200%;
   color: #320DFF;
@@ -17,53 +14,30 @@ h2 {
   color: #0C6DE8;
 }
 ol {
-  color: #178CFF;
-  width: 30%;
+  width: 40%;
+  margin: 10px 0 0 0;
+  padding-left: 2em;
 }
-ol li {
-  line-height: 2em;
-  margin-top: .5em;
+li { 
+  padding: 3px;
+  background-color: #efefef; 
 }
-ul {
-  padding-left: 10px;
-  padding-bottom: 10px;
+li:nth-child(odd) {
+  background-color: #dedede; 
 }
-ul li {
-  line-height: 1em;
-  margin-top: 5px;
-}
-li {
-  cursor: pointer;
-}
-button {
-  font-size: 50%;
-}
-button.edit {
+li button {
   float: right;
+}
+button#add-item {
+  margin: 5px;
 }
 footer {
   position: absolute;
-  bottom: 0px;
-  font-size: 50%;
-  width: 70%;
+  bottom: 0;
   text-align: center;
-  margin: 0 auto;
-  clear: both;
+  /*width: 70%;*/
+  font-size: 50%;
 }
-.urgent {
-  font-weight: bold;
-  color: #B800AC;
-}
-.hidden {
-  display: none;
-}
-div.details {
-  width: 40%;
-  border: 1px solid #efefef;
-  border-radius: 10px;
-  font-style: italic;
-}
-ul.details {
-  width: 100%;
-  list-style-type: none;
+span.edit-me:hover {
+  background-color: yellow;
 }

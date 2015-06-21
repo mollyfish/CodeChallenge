@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>To-Do</title>
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic' rel='stylesheet' type='text/css'>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic' rel='stylesheet' type='text/css'> -->
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
   <script src="script.js"></script>
@@ -13,57 +13,18 @@
   <header>
     <h1>My To-Do List</h1>
   </header>
-  <section id="house">
-    <h2>House</h2>
-    <ol>
-      <li>Replace stairwell lightbulb 
-        <button class="completed">Done!</button><button class="edit">Edit</button>
-      </li>
-    </ol>
-  </section>
-  <section id="errands">
-    <h2>Errands</h2>
-    <ol>
-      <li class="item"><p id="trial">Groceries<span class="show-details"> >> </span></p>
-        <div class="hidden details">
-          <ul class="details">
-            <li>Milk</li>
-            <li>Eggs</li>
-          </ul>
-        </div>
-        <button class="completed">Done!</button><button class="edit">Edit</button>
-      </li>
-      <li>Oil change 
-        <button class="completed">Done!</button><button class="edit">Edit</button>
-      </li>
-    </ol>
-  </section>
-  <section id="office">
-    <h2>Office</h2>
-    <ol>
-      <li class="urgent">Balance checkbook 
-        <button class="completed">Done!</button><button class="edit">Edit</button>
-      </li>
-      <li>Plane tickets for A's visit
-        <button class="completed">Done!</button><button class="edit">Edit</button>
-      </li>
-    </ol>
-  </section>
-  <section>
+
+  <ol id="todo-list">
+    <li><span class="edit-me">Item One</span> <button class="remove-item">Remove</button></li>
+    <li><span class="edit-me">Item Two</span> <button class="remove-item">Remove</button></li>
+    <li><span class="edit-me">Item Three</span> <button class="remove-item">Remove</button></li>
+  </ol>
+  <button id="add-item">Add Item</button>
 
 <form>
-    <input type="hidden" name="hiddenField" />
+    <input type="hidden" name="ghostField" />
 </form>
 
-<p>Please edit me...</p>
-
-
-
-
-
-  </section>
-    
-  
   <footer><p>Copyright Molly Kent 2015.  All rights reserved.</p></footer>
   </main>
 </body>
