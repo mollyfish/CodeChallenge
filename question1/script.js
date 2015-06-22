@@ -29,5 +29,7 @@ $(function() {
     $('#todo-list').append(elLi);
   });
 
-  
+  $('#print').on('click', function() {
+    window.print();
+  }) 
 });

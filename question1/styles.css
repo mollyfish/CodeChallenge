@@ -3,6 +3,13 @@ body {
   font-size: 1em;
   width: 70%;
 }
+main {
+  background-color: rgba(12, 109, 232, .1);
+  border: 1px solid #320DFF;
+  border-radius: 15px;
+  width: 70%;
+  padding: 1em;
+}
 h1 {
   font-size: 200%;
   color: #320DFF;
@@ -14,30 +21,58 @@ h2 {
   color: #0C6DE8;
 }
 ol {
-  width: 40%;
-  margin: 10px 0 0 0;
-  padding-left: 2em;
+  width: 92%;
+  margin: 1em 0 0 0;
+  padding: .5em .5em .5em 2em;
+  background-color: rgba(24, 232, 107, .2);
+  border: 1px solid rgba(24, 232, 107, 1);
+  border-radius: 8px;
 }
 li { 
-  padding: 3px;
-  background-color: #efefef; 
+  padding: 5px 3px 5px 5px;
+  background-color: rgba(24, 232, 107, .3);
 }
 li:nth-child(odd) {
-  background-color: #dedede; 
+  background-color: rgba(24, 232, 107, .5); 
+}
+button:hover {
+  cursor: pointer;
 }
 li button {
   float: right;
+  margin-right: 2px;
+  cursor: pointer;
 }
-button#add-item {
-  margin: 5px;
+button#add-item, button#print {
+  margin: 1em 1em 0 0;
+  width: 7em;
+  height: 2.5em;
+  border-radius: 8px;
+  border: 1px solid #320DFF;
+  background-color: #0C6DE8;
+  color: #fff;
+  font-size: 70%;
+  letter-spacing: .05em;
+}
+button#print {
+  /*float: right;*/
+  /*margin: 1em 0 0 1em;*/
+}
+button#add-item:hover. button#print:hover {
+  background-color: #efefef;
+  /*cursor: pointer;*/
+  color: #320DFF;
 }
 footer {
   position: absolute;
   bottom: 0;
   text-align: center;
-  /*width: 70%;*/
   font-size: 50%;
 }
+span.edit-me {
+  padding: 2px;
+}
 span.edit-me:hover {
-  background-color: yellow;
+  background-color: rgba(12, 109, 232, .3);
+  cursor: pointer;
 }
