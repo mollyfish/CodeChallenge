@@ -1,12 +1,8 @@
 'use strict';
 
 $(function() {
-  $('button#add-item').click(function() {
-    var elLi = $('<li><span class="edit-me">New Item</span> <button class="remove-item">Remove</button></li>')
-    $('#todo-list').append(elLi);
-  });
 
-  $('.edit-me').click(function() {
+  $('ol#todo-list').on('click','span',function() {
     var el = $(this);
     var elReplace = $('<input name="ghost" type="text" placeholder="' + el.text() + '"/>');
     var connect = $('input[name="ghostField"]');
@@ -24,8 +20,13 @@ $(function() {
     });
   });
 
-  $('button.remove-item').click(function() {
+  $('ol#todo-list').on('click','button',function() {
     $(this).parent().remove();
+  });
+
+  $('button#add-item').on('click',function() {
+    var elLi = $('<li><span class="edit-me">New Item</span> <button class="remove-item">Remove</button></li>')
+    $('#todo-list').append(elLi);
   });
 
   
