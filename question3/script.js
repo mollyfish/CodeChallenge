@@ -19,13 +19,15 @@ library.addShelf('Non-Fiction');
 library.addShelf('Art');
 
 library.shelves[0].addBook('Jane Doe', 'See Spot Run');
-library.shelves[1].addBook('John Smith', 'Great American Novel');
+library.shelves[2].addBook('John Smith', 'Great American Novel');
 library.shelves[2].addBook('Joe Public', 'A Biography');
 
-displayLibrary(library);
+// displayLibrary(library);
 library.removeShelf(3);
+// displayLibrary(library);
+library.shelves[2].removeBook('A Biography');
 displayLibrary(library);
-library.shelves[1].removeBook('A Biography');
-displayLibrary(library);
+
+$('#library-name').text(library.name);
 
 });
