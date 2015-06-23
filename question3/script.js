@@ -13,21 +13,24 @@ function displayLibrary(name) {
   console.log('---------------------');
 };
 
-library.addShelf('Children');
-library.addShelf('Fiction');
-library.addShelf('Non-Fiction');
-library.addShelf('Art');
+// library.addShelf('Children');
+// library.addShelf('Fiction');
+// library.addShelf('Non-Fiction');
+// library.addShelf('Art');
 
-library.shelves[0].addBook('Jane Doe', 'See Spot Run');
-library.shelves[2].addBook('John Smith', 'Great American Novel');
-library.shelves[2].addBook('Joe Public', 'A Biography');
+// library.shelves[0].addBook('Jane Doe', 'See Spot Run');
+// library.shelves[2].addBook('John Smith', 'Great American Novel');
+// library.shelves[2].addBook('Joe Public', 'A Biography');
 
 // displayLibrary(library);
-library.removeShelf(3);
+// library.removeShelf(3);
 // displayLibrary(library);
-library.shelves[2].removeBook('A Biography');
+// library.shelves[2].removeBook('A Biography');
 displayLibrary(library);
 
 $('#library-name').text(library.name);
-
+$('#submit-shelf').on('click', function() {
+  var newShelf = $('#add-shelf').val();
+  library.addShelf(newShelf);
+});
 });
