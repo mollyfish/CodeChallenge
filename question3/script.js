@@ -2,18 +2,30 @@
 $(function() {
 var library = new Library('Best Library');
 
-library.addShelf();
-library.addShelf('History');
-
-library.shelves[0].addBook('Jane', 'See Spot Run');
-library.shelves[1].addBook('John', 'Great American Novel');
-
-for (var i = 0; i < library.shelves.length; i++) {
-  console.log(library.shelves[i].name);
-  console.log(library.shelves[i].contents);
-  for (var j = 0; j < library.shelves[i].contents.length; j++) {
-    console.log(library.shelves[i].contents[j].bookTitle + ', by ' + library.shelves[i].contents[j].author);
+function displayLibrary(name) {
+  console.log(name.name);
+  for (var i = 0; i < name.shelves.length; i++) {
+  console.log('Shelf index ' + i + ': ' + name.shelves[i].name);
+    for (var j = 0; j < name.shelves[i].contents.length; j++) {
+      console.log('Shelf ' + i + ', book ' + j + ': ' + name.shelves[i].contents[j].title + ', by ' + name.shelves[i].contents[j].author);
+    };
   };
+  console.log('---------------------');
 };
+
+library.addShelf('Children');
+library.addShelf('Fiction');
+library.addShelf('Non-Fiction');
+library.addShelf('Art');
+
+library.shelves[0].addBook('Jane Doe', 'See Spot Run');
+library.shelves[1].addBook('John Smith', 'Great American Novel');
+library.shelves[2].addBook('Joe Public', 'A Biography');
+
+displayLibrary(library);
+library.removeShelf(3);
+displayLibrary(library);
+library.shelves[1].removeBook('A Biography');
+displayLibrary(library);
 
 });

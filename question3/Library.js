@@ -5,7 +5,11 @@ function Library(name) {
 };
 
 Library.prototype.addShelf = function(name) {
-  var shelfName = name || this.shelves.length + 1;
+  var shelfName = name || this.shelves.length;
   var shelf = new Shelf(shelfName);
   this.shelves.push(shelf);
+};
+
+Library.prototype.removeShelf = function(name) {
+  this.shelves.splice(name, 1);
 };

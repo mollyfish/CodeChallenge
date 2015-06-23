@@ -1,6 +1,5 @@
 'use strict';
-function Book(author, bookTitle, shelf) {
+function Book(author, title) {
     this.author = author;
-    this.bookTitle = bookTitle;
-    this.shelf = 0 || shelf;
+    this.title = title;
 };
