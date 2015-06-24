@@ -1,6 +1,6 @@
 'use strict';
 $(function() {
-var library = new Library('Best Library');
+var library = new Library('Best Library Ever');
 
 function displayLibrary(name) {
   console.log(name.name);
@@ -13,27 +13,11 @@ function displayLibrary(name) {
   console.log('---------------------');
 };
 
-// library.addShelf('Children');
-// library.addShelf('Fiction');
-// library.addShelf('Non-Fiction');
-// library.addShelf('Art');
-
-// library.shelves[0].addBook('Jane Doe', 'See Spot Run');
-// library.shelves[2].addBook('John Smith', 'Great American Novel');
-// library.shelves[2].addBook('Joe Public', 'A Biography');
-
-// displayLibrary(library);
-// library.removeShelf(3);
-// displayLibrary(library);
-// library.shelves[2].removeBook('A Biography');
-displayLibrary(library);
-
 $('#library-name').text(library.name);
 
 $('#submit-shelf').on('click', function() {
   var newShelf = $('#add-shelf').val();
   library.addShelf(newShelf);
-  displayLibrary(library);
   $('#add-shelf').val('');
 });
 
@@ -44,11 +28,11 @@ $('#stacks').on('click', 'button.delete-shelf', function() {
   library.removeShelf(toRemove);
   $(this).prev('p').remove();
   $(this).next('ul').remove();
+  $(this).next('form').remove();
   $(this).remove();
-  displayLibrary(library);
 });
 
-$('#stacks').on('click', 'form button', function(e) {
+$('#stacks').on('click', 'button.add-book', function(e) {
   e.preventDefault();
   var shelfId = ($(this).parent().prev('ul').attr('id'));
   var arr = shelfId.split('f');
@@ -58,5 +42,10 @@ $('#stacks').on('click', 'form button', function(e) {
   library.shelves[shelfNum].addBook(author, title);
   $(this).parent().children('input.title').val('');
   $(this).parent().children('input.author').val('');
+});
+
+$('#stacks').on('click', 'button.delete-book', function(e) {
+  $(this).prev('li').remove();
+  $(this).remove();
 });
 });

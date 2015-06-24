@@ -9,7 +9,7 @@ Shelf.prototype.addBook = function(author, title, index) {
   var bookIndex = this.contents.length;
   var newBook = new Book(author, title, bookIndex);
   this.contents.push(newBook);
-  $('ul#shelf' + this.index).append('<li id="book' + bookIndex + '">' + title + ', by ' + author + '</li><button>Remove ' + title + '</button>');
+  $('ul#shelf' + this.index).append('<li id="book' + bookIndex + '">' + title + ', by ' + author + '</li><button class="delete-book">Remove ' + title + '</button>');
 };
 
 Shelf.prototype.removeBook = function(lookfor) {
