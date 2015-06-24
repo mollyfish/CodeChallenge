@@ -29,8 +29,34 @@ function displayLibrary(name) {
 displayLibrary(library);
 
 $('#library-name').text(library.name);
+
 $('#submit-shelf').on('click', function() {
   var newShelf = $('#add-shelf').val();
   library.addShelf(newShelf);
+  displayLibrary(library);
+  $('#add-shelf').val('');
+});
+
+$('#stacks').on('click', 'button.delete-shelf', function() {
+  var shelfId = ($(this).next().attr('id'));
+  var arr = shelfId.split('f');
+  var toRemove = parseInt(arr[1]);
+  library.removeShelf(toRemove);
+  $(this).prev('p').remove();
+  $(this).next('ul').remove();
+  $(this).remove();
+  displayLibrary(library);
+});
+
+$('#stacks').on('click', 'form button', function(e) {
+  e.preventDefault();
+  var shelfId = ($(this).parent().prev('ul').attr('id'));
+  var arr = shelfId.split('f');
+  var shelfNum = parseInt(arr[1]);
+  var title = $(this).parent().children('input.title').val();
+  var author = $(this).parent().children('input.author').val();
+  library.shelves[shelfNum].addBook(author, title);
+  $(this).parent().children('input.title').val('');
+  $(this).parent().children('input.author').val('');
 });
 });
