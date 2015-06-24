@@ -12,7 +12,7 @@ function displayLibrary(name) {
   };
   console.log('---------------------');
 };
-
+var newShelf;
 $('#library-name').text(library.name);
 
 $('#submit-shelf').on('click', function() {
@@ -25,17 +25,19 @@ $('#stacks').on('click', 'button.delete-shelf', function() {
   var shelfId = ($(this).next().attr('id'));
   var arr = shelfId.split('f');
   var toRemove = parseInt(arr[1]);
+  var shelfName = $(this).prev('p').text();
   library.removeShelf(toRemove);
+  $('form#' + shelfName).remove();
   $(this).prev('p').remove();
   $(this).next('ul').remove();
-  $(this).next('form').remove();
   $(this).remove();
 });
 
-$('#stacks').on('click', 'button.add-book', function(e) {
+$('#contribute').on('click', 'button.add-book', function(e) {
   e.preventDefault();
-  var shelfId = ($(this).parent().prev('ul').attr('id'));
-  var arr = shelfId.split('f');
+  var formId = ($(this).parent().attr('id'));
+  var shelfListId = $('p.' + formId).next().next().attr('id');
+  var arr = shelfListId.split('f');
   var shelfNum = parseInt(arr[1]);
   var title = $(this).parent().children('input.title').val();
   var author = $(this).parent().children('input.author').val();

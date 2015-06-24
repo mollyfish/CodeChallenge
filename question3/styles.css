@@ -1,0 +1,44 @@
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 1em;
+}
+h1 {
+  font-size: 150%;
+}
+#stacks p {
+  color: red;
+  font-size: 140%;
+  padding: 0;
+  margin: 0;
+}
+#contribute {
+  color: #FF5313;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+#contribute p {
+  padding: 0;
+  margin: 0;
+}
+#contribute form {
+  margin-top: 1em;
+}
+button {
+  background-color: #00A7FF;
+  border-radius: 8px;
+  border: 1px solid #0C21E8;
+  font-size: 70%; 
+}
+button:hover {
+  cursor: pointer;
+}
+button.delete-shelf, button.delete-book {
+  background-color: #D1EAFF;
+  border-radius: 0;
+  border-color: #00A7FF;
+  font-size: 30%;
+}
+button.add-book {
+  margin-top: .3em;
+}
