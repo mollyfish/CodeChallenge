@@ -31,6 +31,11 @@ $('#stacks').on('click', 'button.delete-shelf', function() {
   $(this).prev('p').remove();
   $(this).next('ul').remove();
   $(this).remove();
+  //must update the ids of the remaining shelves
+  var remainingShelves = $('#stacks ul');
+  $(remainingShelves).each(function(i) {
+    $(remainingShelves[i]).attr('id', 'shelf' + i);
+  })
 });
 
 $('#contribute').on('click', 'button.add-book', function(e) {

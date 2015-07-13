@@ -16,4 +16,8 @@ Library.prototype.addShelf = function(name) {
 Library.prototype.removeShelf = function(index) {
   this.shelves.splice(index, 1);
   $('#shelf' + index).remove();
+  $(this.shelves).each(function(i) {
+    this.index = i;//updates the shelf index so remaining shelves will match with their add book buttons
+  })
+  
 };
